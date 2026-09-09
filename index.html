@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie App</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!--Main content for page-->
+    <main class="container">
+        <!--Page Header-->
+        <h1>My Movie App</h1>
+        <!--Section for searching and sorting-->
+        <section class="search-sort">
+            <h2 class="">Movie Search / Sort</h2>
+
+
+        </section>
+        <!--End search and sort section-->
+        <!--Start movie list section-->
+        <section id="mList">
+            <h2 class="ml-3">Movie List</h2>
+
+
+        </section>
+        <!--End Movie List section-->
+        <!--Section to display messages-->
+        <section id="msg" class="msgBox">
+
+
+        </section>
+        <!--Start Tab Section-->
+        <!--Tabs-->
+        <section class="tabs">
+
+
+        </section>
+        <!--End Tab Section-->
+        <!--Tab content-->
+        <!-- Add Movie Form-->
+         <section id="Add" class="tabcontent">
+            <h2>Add a Movie</h2>
+
+         </section>
+         <!--End Add Movie Section-->
+         <!--Update Movie section-->
+         <section id="Update" class="tabcontent">
+            <h2>Update a Movie</h2>
+         </section>
+         <!--End Update Movie Section-->
+         <!--Delete Movie Section-->
+         <section id="Delete" class="tabcontent">
+            <h2>Delete a Movie</h2>
+         </section>
+         <!--End Delete Movie Section-->
+         <!--Footer-->
+         <footer>
+            <div>
+                <p>Copyright &copy; <span id="date"></span>My Movie App</p>
+            </div>
+         </footer>
+         <!--End Footer-->
+    </main>
+    <!--End Main Content-->
+    <!--Load in our JS-->
+    <!--NOTE: The order we import JS here is important-->
+    <!--Have the movielist.js first, allows app.js to access the 
+    class defined in this file-->
+    <script src="./js/movie-list.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
