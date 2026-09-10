@@ -53,17 +53,28 @@ class MovieList {
      */
     genMovieList() {
         //loop through the movielist
-        for (let i = 0; this.movieList.length; i++) {
-            let move = this.movieList[i];
+        for (let i = 0; i < this.movieList.length; i++) {
+            let movie = this.movieList[i];
             // Call the movieRow method
+            console.log(movie);
             this.movieRow(movie.title, movie.year);
         }
     }
 
     /**
      * @function genMovieListSearchList
+     * @description Generate a movie based on our search term
+     * @param {Array} list - The list of movies to display based on the search term
      **/
-
+    genMovieListSearchList(list) {
+        //Remove all elements
+        this.removeElements();
+        // Generate a new list
+        for (let i = 0; i < list.length; i++) {
+            let movie = list[i];
+            this.movieRow(movie.title, movie.year);
+        }
+    }
     /** 
      * @function removeElements
      *  */
@@ -94,27 +105,74 @@ class MovieList {
         this.removeElements();
         this.genMovieList();
     }
+    //CRUD - CREATE READ UPDATE DELETE
      /**
+      * Adding a new movie to the movieList - CREATE
       * @function add
+      * @param {string} title - The movie title
+      * @param {number} year = The year the movie was released
       */
-
+     add(title, year) {
+        //Add a new movie to the end of the list
+        this.movieList.push({ title: title, year: year});
+        //Write use ES^ syntax .push({title, year})
+     }
+    
      /** 
       * @function update
+      * @param {number} index - The index of hte movie to update
+      * @param {string} title - The new movie title
+      * @param {number} year 
       */
+     update(index, title, year) {
+        this.movieList[index].title = title;
+        this.movieList[index].year = year;
+        this.refresh();
+
+     }
 
      /**
+      * Delete a movie from the movieList - DELETE from CRUD
       * @function delete
+      * @param {number} index - This is the index of hte movie from movieList
       */
-
+     delete(index) {
+        this.movieList.splice(index, 1);
+        //Refresh
+        this.refresh();
+     }
      /**
       * @function sortA2Z
       */
-
+     sotA2Z() {
+        this.movieList.sort(function(a, b){
+            return a.title.localCompare(b.title);
+        });
+        this.refresh();
+     }
      /**
       * @function sortZ2A
       */
-
+    sotZ2A() {
+        this.movieList.sort(function(a, b){
+            return a.title.localCompare(a.title);
+        });
+        this.refresh();
+     }
      /**
       * @function search
+      * @description Search the movielist titles for a partial match
       */
+     search(nameString){ 
+        let shortList = [];
+        // Loop through the titles to see if the nameString is in a movieTitle
+        for (movie of this.movieList) {
+            //Check to see if namestring is in movie.title
+            if(movie.title.includes(nameString)) {
+                shortList.push(movie);
+            }
+        }
+        // Call the genMovieSearchList
+        this.genMovieSearchList(shortList);
+     }
 }

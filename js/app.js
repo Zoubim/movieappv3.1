@@ -12,6 +12,68 @@
  * Bound checking for getData() and deleteclick()
  */
 
+/**
+ * @global
+ * @description The initial list of movies for our app
+ */
+
+let initialMovies = [
+    {title: "The Shawshank Redemption", year: 1994 },
+    {title: "The Godfather", year: 1972 },
+    {title: "The Godfather: Part II", year: 1974 },
+    {title: "The Dark Knight", year: 2008 },
+    {title: "Krull", year: 1983 },
+    {title: "The Last Starfigher", year: 1981 }
+];
+
+
+/**
+ * @memberof MovieList
+ * @instance movieList
+ * @param {string} - The id of the element we want to have our movieList appear in
+ * @param {Array} initialMovies - The array of movies in our movieList
+ * @global
+ * @description The movieList instance to keep track of our list of movies in the app
+ */
+
+let movieList = new MovieList(`list`, initialMovies);
+
+const searchBtn = document.getElementById('searchBtn');
+const sortA2ZBtn = document.getElementById('sortA2ZBtn');
+const sortZ2ABtn = document.getElementById('sortZ2ABtn');
+const addSubmit = document.getElementById('addSubmit');
+const updateSubmit = document.getElementById('updateSubmit');
+const deleteSubmit = document.getElementById('deleteSubmit');
+
+// Add event handlers
+searchBtn.addEventListener('click', searchClick);
+sortA2ZBtn.addEventListener('click', a2zClick);
+sortZ2ABtn.addEventListener('click', z2aClick);
+addSubmit.addEventListener('click', addClick);
+updateSubmit.addEventListener('click', updateClick);
+deleteSubmit.addEventListener('click', deleteClick);
+
+
+/**
+ * search for a movie by partial title
+ * @event Click#searchBtn
+ * @function searchClick
+ */
+function searchClick() {
+    let formElements = document.getElementsById('form-list-control').elements;
+    let text = formElements["search-string"].value;
+    movieList.search(text);
+}
+
+function a2zClick() {
+    movieList.sortA2Z();
+}
+
+function z2aClick() {
+    movieList.sortZ2A();
+}
+
+
 // UI Javascript
 /**
  * JavaScript function for opening the forms
