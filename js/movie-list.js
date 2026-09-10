@@ -31,11 +31,34 @@ class MovieList {
 
     /**
      * @function movieRow
+     * @param {string} title - The title of the movie
+     * @param {number} year - The year the movie was released
      */
 
+    movieRow(title, year){const rootElement = document.getElementById(this.rootId);
+    const row = document.createElement('li');
+    row.classList.add('row');
+    row.textContent = `${title} (${year})`;
+    rootElement.appendChild(row);
+}
+    // Get the parent element
+
+    
     /**
+     * Generate all rows in our movieList (Read)
+     * This method will call movieRow for each element in our movieList
+     * This will create all movies for our UI to display
      * @function genMovieList
+     * 
      */
+    genMovieList() {
+        //loop through the movielist
+        for (let i = 0; this.movieList.length; i++) {
+            let move = this.movieList[i];
+            // Call the movieRow method
+            this.movieRow(movie.title, movie.year);
+        }
+    }
 
     /**
      * @function genMovieListSearchList
@@ -44,15 +67,33 @@ class MovieList {
     /** 
      * @function removeElements
      *  */
-
+    removeElements() {
+        //Getting root ID
+        const rootElement = document.getElementById(this.rootId);
+        // Get all the elements with the class name of now
+        const childNodes = document.getElementsByClassName('row');
+        // How mnay children we have?
+        const len = childNodes.length - 1;
+        for (let i = len; i >= 0; i--) {
+            //pull out the list child
+            const child = childNodes[i];
+            // Remove this child from the DOM
+            rootElement.removeChild(child);
+        }
+    }
     /** 
      * @function getRow
       */
 
      /**
+      * Call removeElements() method and 
+      * call genMovieList() to add in the new list
       * @function refresh
       */
-
+    refresh() {
+        this.removeElements();
+        this.genMovieList();
+    }
      /**
       * @function add
       */
@@ -72,7 +113,7 @@ class MovieList {
      /**
       * @function sortZ2A
       */
-     
+
      /**
       * @function search
       */
