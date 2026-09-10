@@ -95,6 +95,47 @@ ol {
     margin-left: 1.5rem;
 
 
+/* Tab Styles */
+/* Tablinks */
+.tab {
+    margin-top: 1rem;
+    overflow: hidden;
+    border: 2px solid black;
+}
+.tab button {
+    float: left;
+    border: none;
+    outline: none;
+    padding: 1rem 1.2rem;
+    transition-property: 0.3s;
+    color: cyan;
+}
+.tab button.active {
+    background-color: yellow;
+    color: black;
+    font-weight: 700;
+}
+.tabcontent {
+    padding: 1rem 1.5rem;
+    border: 2px solid #333333;
+    border-top: none;
+}
+.tabcontent h2 {
+    margin-top: 0;
+    text-align: center;
+}
+.tabcontent label {
+    display: inline-block;
+    width: 6%;
+}
+.tabcontent input {
+    display: inline-block;
+    width: 93%;
+}
+.tabcontent button {
+    width: 100%;
+}
+
 /*Footer Styles */
 
 
