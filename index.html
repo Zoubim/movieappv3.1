@@ -53,25 +53,59 @@
         <!--Start Tab Section-->
         <!--Tabs-->
         <section class="tabs">
-
-
+            <button class="tablinks">Add a New Movie</button>
+            <button class="tablinks">Update a Movie</button>
+            <button class="tablinks">Delete a Movie</button>
         </section>
         <!--End Tab Section-->
         <!--Tab content-->
         <!-- Add Movie Form-->
          <section id="Add" class="tabcontent">
             <h2>Add a Movie</h2>
-
+            <form id="form-add">
+                <div class="mb-3">
+                    <label for="addTitle">Title: </label>
+                    <input type="text" placeholder="Title.." name="title" id="addTitle">
+                </div>
+                <div class="mb-3">
+                    <label for="addYear">Year: </label>
+                    <input type="text" placeholder="Year.." name="year" id="addYear">
+                </div>
+                <button type="button" name="submit" id="addSubmit">Add Movie</button>
+            </form>
          </section>
          <!--End Add Movie Section-->
          <!--Update Movie section-->
          <section id="Update" class="tabcontent">
             <h2>Update a Movie</h2>
+             <form id="form-update">
+                <div class="mb-3">
+                    <label for="upIndex">Index: </label>
+                    <input type="text" placeholder="Index.." name="index" id="upIndex">
+                </div>
+                <div class="mb-3">
+                    <label for="upTitle">Title: </label>
+                    <input type="text" placeholder="Title.." name="title" id="upTitle">
+                </div>
+                <div class="mb-3">
+                    <label for="upYear">Year: </label>
+                    <input type="text" placeholder="Year.." name="year" id="upYear">
+                </div>
+                <button type="button" name="submit" id="updateSubmit">Update Movie</button>
+            </form>
          </section>
          <!--End Update Movie Section-->
          <!--Delete Movie Section-->
          <section id="Delete" class="tabcontent">
             <h2>Delete a Movie</h2>
+            <form id="form-delete">
+                <div class="mb-3">
+                    <label for="delIndex">Index: </label>
+                    <input type="text" placeholder="Index.." name="index" id="delIndex">
+                </div>
+                <button type="button" name="submit" id="deleteSubmit">Delete Movie</button>
+
+            </form>
          </section>
          <!--End Delete Movie Section-->
          <!--Footer-->
