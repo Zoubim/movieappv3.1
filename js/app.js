@@ -45,3 +45,17 @@ function openForm(evt, action) {
 
 // Open a tab by default
 document.getElementById('defaultOpen').click();
+
+/**
+ * @function showMessage
+ * @param {string} message - the message to display
+ * @param {string} colour - the colour of the message box background
+ * @param {string} text - the colour of the text in the message box
+ */
+function showMessage(message, colour, text) {
+    const msg = document.getElementById('msg');
+    msg.style.display = "block";
+    msg.textContent = message;
+    msg.style.backgroundColor = colour;
+    msg.style.color = text;
+}
