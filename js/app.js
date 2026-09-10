@@ -73,6 +73,32 @@ function z2aClick() {
     movieList.sortZ2A();
 }
 
+/**
+ * @event click#addSubmit
+ * @function addClick
+ * @description add a new movie to the list
+ */
+function addClick(){
+    //Get form from the DOM
+    let formElements = document.getElementsById("form-add").elements;
+    let title = formElements["title"].value;
+    let year = Number(formElements["year"].value);
+
+    movieList.add(title, Number(year));
+}
+function updateClick(){
+    let formElements = document.getElementById("form-update").elements;
+    let index = Number(formElements["index"].value -1);
+    let title = formElements["title"].value;
+    let year = Number(formElements["year"]).value);
+    movieList.update(Number(index), title, Number(year));
+}
+
+function deleteClick() {
+    let indexElement = document.getElementById("delIndex");
+    let index = Number(indexElement.value);
+    
+}
 
 // UI Javascript
 /**
