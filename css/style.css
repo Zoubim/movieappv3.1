@@ -93,7 +93,7 @@ ol {
 }
 .search-sort form {
     margin-left: 1.5rem;
-
+}
 
 /* Tab Styles */
 /* Tablinks */
@@ -119,6 +119,7 @@ ol {
     padding: 1rem 1.5rem;
     border: 2px solid #333333;
     border-top: none;
+    display: none;
 }
 .tabcontent h2 {
     margin-top: 0;
